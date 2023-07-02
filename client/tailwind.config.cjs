@@ -2,14 +2,14 @@
 module.exports = {
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
-    extend: {     //自定义主色调
+    extend: {
       colors: {
         siteblack: '#131519',
         siteDimBlack: '#191d23',
         siteViolet: '#7f46f0',
         siteWhite: '#9eacc7',
       },
-      backgroundImage: {  //背景图
+      backgroundImage: {
         astral: "url('/src/assets/background/astral.jpg')",
         saiman: "url('/src/assets/background/saiman.jpg')",
         eoaalien: "url('/src/assets/background/eoaalien.jpg')",

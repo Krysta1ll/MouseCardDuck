@@ -1,16 +1,77 @@
-import React from 'react';
-import { PageHOC } from '../components';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import { CustomButton, CustomInput, PageHOC } from '../components';
+import { useGlobalContext } from '../context';
 
 const Home = () => {
+  const { contract, walletAddress, gameData, setShowAlert, setErrorMessage } = useGlobalContext();
+  const [playerName, setPlayerName] = useState('');
+  const navigate = useNavigate();
+
+  const handleClick = async () => {
+    try {
+      const playerExists = await contract.isPlayer(walletAddress);
+
+      if (!playerExists) {
+        await contract.registerPlayer(playerName, playerName, { gasLimit: 500000 });
+
+        setShowAlert({
+          status: true,
+          type: 'info',
+          message: `${playerName} is being summoned!`,
+        });
+
+        setTimeout(() => navigate('/create-battle'), 8000);
+      }
+    } catch (error) {
+      setErrorMessage(error);
+    }
+  };
+
+  useEffect(() => {
+    const createPlayerToken = async () => {
+      const playerExists = await contract.isPlayer(walletAddress);
+      const playerTokenExists = await contract.isPlayerToken(walletAddress);
+
+      if (playerExists && playerTokenExists) navigate('/create-battle');
+    };
+
+    if (contract) createPlayerToken();
+  }, [contract]);
+
+  useEffect(() => {
+    if (gameData.activeBattle) {
+      navigate(`/battle/${gameData.activeBattle.name}`);
+    }
+  }, [gameData]);
+
   return (
-    <div>
-      
-    </div>
-  )
+    walletAddress && (
+      <div className="flex flex-col">
+        <CustomInput
+          label="Name"
+          placeHolder="Enter your player name"
+          value={playerName}
+          handleValueChange={setPlayerName}
+        />
+
+        <CustomButton
+          title="Register"
+          handleClick={handleClick}
+          restStyles="mt-6"
+        />
+      </div>
+    )
+  );
 };
 
 export default PageHOC(
- Home,
- <>欢迎来到MouseCardDuck <br />这是一个基于web3的nft卡牌游戏</>,
- <>连接你的nft钱包然后开始游戏<br />享受史诗级的卡牌体验</>
+  Home,
+  <>
+    欢迎来到MouseCardDuck <br /> 这是一个基于web3的nft卡牌游戏
+  </>,
+  <>
+    连接到你的钱包并且开始游戏 <br /> Connect to your wallet and start.
+  </>,
 );
