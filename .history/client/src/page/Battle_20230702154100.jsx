@@ -67,7 +67,7 @@ const Battle = () => {
       setShowAlert({
         status: true,
         type: 'info',
-        message: `正在准备 ${choice === 1 ? '攻击' : '防御'}请等待交易完成`,
+        message: `Initiating ${choice === 1 ? 'attack' : 'defense'}`,
       });
     } catch (error) {
       setErrorMessage(error);

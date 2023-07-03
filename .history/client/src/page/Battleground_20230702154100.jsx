@@ -15,7 +15,7 @@ const Battleground = () => {
 
     localStorage.setItem('battleground', ground.id);
 
-    setShowAlert({ status: true, type: 'info', message: `${ground.name} 已就绪!` });
+    setShowAlert({ status: true, type: 'info', message: `${ground.name} is battle ready!` });
 
     setTimeout(() => {
       navigate(-1);
@@ -27,9 +27,9 @@ const Battleground = () => {
       {showAlert.status && <Alert type={showAlert.type} message={showAlert.message} />}
 
       <h1 className={`${styles.headText} text-center`}>
-        选择你的
-        <span className="text-siteViolet"> 对战 </span>
-        背景
+        Choose your
+        <span className="text-siteViolet"> Battle </span>
+        Ground
       </h1>
 
       <div className={`${styles.flexCenter} ${styles.battleGroundsWrapper}`}>

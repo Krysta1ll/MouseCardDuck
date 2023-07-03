@@ -50,7 +50,7 @@ const Home = () => {
     walletAddress && (
       <div className="flex flex-col">
         <CustomInput
-          label="昵称"
+          label="Name"
           placeHolder="请输入昵称"
           value={playerName}
           handleValueChange={setPlayerName}

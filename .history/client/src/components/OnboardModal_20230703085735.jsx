@@ -49,7 +49,7 @@ const OnboardModal = () => {
         return (
           <>
             <p className={styles.modalText}>
-              您还未连接到Core钱包
+              You haven't connected your account to Core Wallet!
             </p>
             <CustomButton
               title="连接到账户"
@@ -62,7 +62,7 @@ const OnboardModal = () => {
         return (
           <>
             <p className={styles.modalText}>
-              请切换链网至Fuji测试网络
+              You're on a different network. Switch to Fuji C-Chain.
             </p>
             <CustomButton title="切换到Fuji链" handleClick={SwitchNetwork} />
           </>
@@ -72,7 +72,7 @@ const OnboardModal = () => {
         return (
           <>
             <p className={styles.modalText}>
-              Oops, 您还没有Avax测试代币
+              Oops, you don't have AVAX tokens in your account
             </p>
             <CustomButton
               title="获取Avax测试代币"

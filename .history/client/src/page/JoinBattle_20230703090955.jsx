@@ -19,7 +19,7 @@ const JoinBattle = () => {
     try {
       await contract.joinBattle(battleName);
 
-      setShowAlert({ status: true, type: 'success', message: `正在加入 ${battleName} 请等待交易完成` });
+      setShowAlert({ status: true, type: 'success', message: `Joining ${battleName}` });
     } catch (error) {
       setErrorMessage(error);
     }
@@ -27,7 +27,7 @@ const JoinBattle = () => {
 
   return (
     <>
-      <h2 className={styles.joinHeadText}>正在等待加入的战斗:</h2>
+      <h2 className={styles.joinHeadText}>Available Battles:</h2>
 
       <div className={styles.joinContainer}>
         {gameData.pendingBattles.length

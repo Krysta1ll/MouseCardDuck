@@ -49,7 +49,7 @@ const CreateBattle = () => {
         />
       </div>
       <p className={styles.infoText} onClick={() => navigate('/join-battle')}>
-        或加入已创建的对局
+        Or join already existing battles
       </p>
     </>
   );

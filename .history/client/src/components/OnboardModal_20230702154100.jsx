@@ -39,7 +39,7 @@ const OnboardModal = () => {
               You don't have Core Wallet installed!
             </p>
             <CustomButton
-              title="下载Core钱包"
+              title="Download Core"
               handleClick={() => window.open('https://core.app/', '_blank')}
             />
           </>
@@ -49,10 +49,10 @@ const OnboardModal = () => {
         return (
           <>
             <p className={styles.modalText}>
-              您还未连接到Core钱包
+              You haven't connected your account to Core Wallet!
             </p>
             <CustomButton
-              title="连接到账户"
+              title="Connect Account"
               handleClick={updateCurrentWalletAddress}
             />
           </>
@@ -62,9 +62,9 @@ const OnboardModal = () => {
         return (
           <>
             <p className={styles.modalText}>
-              请切换链网至Fuji测试网络
+              You're on a different network. Switch to Fuji C-Chain.
             </p>
-            <CustomButton title="切换到Fuji链" handleClick={SwitchNetwork} />
+            <CustomButton title="Switch" handleClick={SwitchNetwork} />
           </>
         );
 
@@ -72,10 +72,10 @@ const OnboardModal = () => {
         return (
           <>
             <p className={styles.modalText}>
-              Oops, 您还没有Avax测试代币
+              Oops, you don't have AVAX tokens in your account
             </p>
             <CustomButton
-              title="获取Avax测试代币"
+              title="Grab some test tokens"
               handleClick={() => window.open('https://faucet.avax.network/', '_blank')}
             />
           </>

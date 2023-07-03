@@ -14,7 +14,7 @@ const GameLoad = () => {
     <div className={`${styles.flexBetween} ${styles.gameLoadContainer}`}>
       <div className={styles.gameLoadBtnBox}>
         <CustomButton
-          title="选择背景"
+          title="Choose Battleground"
           handleClick={() => navigate('/battleground')}
           restStyles="mt-6"
         />
@@ -22,10 +22,10 @@ const GameLoad = () => {
 
       <div className={`flex-1 ${styles.flexCenter} flex-col`}>
         <h1 className={`${styles.headText} text-center`}>
-          正在匹配 <br /> 旗鼓相当的对手...
+          Waiting for a <br /> worthy opponent...
         </h1>
         <p className={styles.gameLoadText}>
-          Tips：在匹配过程中，你可以选择自己喜欢的背景
+          Protip: while you're waiting, choose your preferred battleground
         </p>
 
         <div className={styles.gameLoadPlayersBox}>
@@ -45,10 +45,10 @@ const GameLoad = () => {
         </div>
 
         <div className="mt-10">
-          <p className={`${styles.infoText} text-center mb-5`}>或</p>
+          <p className={`${styles.infoText} text-center mb-5`}>OR</p>
 
           <CustomButton
-            title="加入其他已创建的战斗"
+            title="Join other battles"
             handleClick={() => navigate('/join-battle')}
           />
         </div>

@@ -19,7 +19,7 @@ const JoinBattle = () => {
     try {
       await contract.joinBattle(battleName);
 
-      setShowAlert({ status: true, type: 'success', message: `正在加入 ${battleName} 请等待交易完成` });
+      setShowAlert({ status: true, type: 'success', message: `Joining ${battleName}` });
     } catch (error) {
       setErrorMessage(error);
     }

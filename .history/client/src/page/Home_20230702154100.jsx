@@ -19,7 +19,7 @@ const Home = () => {
         setShowAlert({
           status: true,
           type: 'info',
-          message: `玩家 ${playerName} 已创建!`,
+          message: `${playerName} is being summoned!`,
         });
 
         setTimeout(() => navigate('/create-battle'), 8000);
@@ -50,14 +50,14 @@ const Home = () => {
     walletAddress && (
       <div className="flex flex-col">
         <CustomInput
-          label="昵称"
-          placeHolder="请输入昵称"
+          label="Name"
+          placeHolder="Enter your player name"
           value={playerName}
           handleValueChange={setPlayerName}
         />
 
         <CustomButton
-          title="注册"
+          title="Register"
           handleClick={handleClick}
           restStyles="mt-6"
         />
