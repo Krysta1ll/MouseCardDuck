@@ -17,7 +17,7 @@ const GameInfo = () => {
     try {
       await contract.quitBattle(battleName);
 
-      setShowAlert({ status: true, type: 'info', message: `You're quitting the ${battleName}` });
+      setShowAlert({ status: true, type: 'info', message: `你正在退出战斗： ${battleName} 请等待交易完成` });
     } catch (error) {
       setErrorMessage(error);
     }
@@ -49,7 +49,7 @@ const GameInfo = () => {
             </div>
           </div>
 
-          <h3 className={styles.gameInfoHeading}>Game Rules:</h3>
+          <h3 className={styles.gameInfoHeading}>游戏规则:</h3>
 
           <div className="mt-3">
             {gameRules.map((rule, index) => (
@@ -61,8 +61,8 @@ const GameInfo = () => {
         </div>
 
         <div className={`${styles.flexBetween} mt-10 gap-4 w-full`}>
-          <CustomButton title="Change Battleground" handleClick={() => navigate('/battleground')} />
-          <CustomButton title="Exit Battle" handleClick={() => handleBattleExit()} />
+          <CustomButton title="切换战斗场地" handleClick={() => navigate('/battleground')} />
+          <CustomButton title="退出战斗" handleClick={() => handleBattleExit()} />
         </div>
       </div>
     </>
