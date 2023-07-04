@@ -22,7 +22,15 @@ const GameInfo = () => {
       setErrorMessage(error);
     }
   };
+  const backToMenu = async () => {
+      try {
+        navigate('../create-battle');
+      }catch(error){
 
+        setErrorMessage(error);
+      }
+
+  };
   return (
     <>
       <div className={styles.gameInfoIconBox}>
@@ -62,7 +70,8 @@ const GameInfo = () => {
 
         <div className={`${styles.flexBetween} mt-10 gap-4 w-full`}>
           <CustomButton title="切换战斗场地" handleClick={() => navigate('/battleground')} />
-          <CustomButton title="退出战斗" handleClick={() => handleBattleExit()} />
+          <CustomButton title="投降" handleClick={() => handleBattleExit()} />
+          <CustomButton title="返回主菜单" handleClick={() => backToMenu()} />
         </div>
       </div>
     </>

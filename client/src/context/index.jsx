@@ -112,6 +112,8 @@ export const GlobalContextProvider = ({ children }) => {
           }
         });
 
+        
+
         setGameData({ pendingBattles: pendingBattles.slice(1), activeBattle });
       }
     };

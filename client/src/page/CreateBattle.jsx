@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import styles from '../styles';
 import { useGlobalContext } from '../context';
-import { CustomButton, CustomInput, GameLoad, PageHOC, PlayerInfo } from '../components';
+import { CustomButton, CustomInput, GameInfo, GameLoad, PageHOC, PlayerInfo } from '../components';
 
 
 const CreateBattle = () => {
@@ -15,11 +15,14 @@ const CreateBattle = () => {
  
   useEffect(() => {
     if (gameData?.activeBattle?.battleStatus === 1) {
+      
       navigate(`/battle/${gameData.activeBattle.name}`);
     } else if (gameData?.activeBattle?.battleStatus === 0) {
       setWaitBattle(true);
     }
 
+
+     console.log(gameData);
     //const player = contract.getPlayer(walletAddress);
     const getPlayerInfo = async () => {
       try {

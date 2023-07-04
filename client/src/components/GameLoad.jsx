@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import CustomButton from './CustomButton';
@@ -7,9 +7,41 @@ import { player01, player02 } from '../assets';
 import styles from '../styles';
 
 const GameLoad = () => {
-  const { walletAddress } = useGlobalContext();
+  const { walletAddress, gameData,contract } = useGlobalContext();
   const navigate = useNavigate();
+  
+  // useEffect(()=>{
+  //  navigate('/create-battle');
 
+
+  // });
+
+
+
+  const stopWaiting = async()=>{
+    navigate('/create-battle');
+   const battleName = gameData.pendingBattles[0].name;
+   console.log(battleName);
+   console.log(walletAddress);
+    try {
+
+      const battle=await contract.getBattle(battleName);
+      console.log(battle);
+      
+      await contract.quitBattle(battleName);
+      // await contract.deleteBattle(battleName);
+      navigate('/');
+    } catch (error) {
+       
+       console.log('err');
+    }
+   
+    
+
+
+
+
+  };
   return (
     <div className={`${styles.flexBetween} ${styles.gameLoadContainer}`}>
       <div className={styles.gameLoadBtnBox}>
@@ -50,6 +82,10 @@ const GameLoad = () => {
           <CustomButton
             title="加入其他已创建的战斗"
             handleClick={() => navigate('/join-battle')}
+          />
+          <CustomButton
+            title="停止匹配"
+            handleClick={() => stopWaiting()}
           />
         </div>
       </div>

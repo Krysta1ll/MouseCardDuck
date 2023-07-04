@@ -54,7 +54,7 @@ contract AVAXGods is ERC1155, Ownable, ERC1155Supply {
 
   mapping(address => uint256) public playerInfo; // Mapping of player addresses to player index in the players array
   mapping(address => uint256) public playerTokenInfo; // Mapping of player addresses to player token index in the gameTokens array
-  mapping(string => uint256) public battleInfo; // Mapping of battle name to battle index in the battles array
+    mapping(string => uint256) public battleInfo; // Mapping of battle name to battle index in the battles array
 
   Player[] public players; // Array of players
   GameToken[] public gameTokens; // Array of game tokens
@@ -107,7 +107,11 @@ contract AVAXGods is ERC1155, Ownable, ERC1155Supply {
     require(isBattle(_name), "Battle doesn't exist!");
     return battles[battleInfo[_name]];
   }
+  function getBattleByAddress(address creator)public view returns (Battle memory){
+   return battles[battleInfo(_)]
 
+
+  }
   function getAllBattles() public view returns (Battle[] memory) {
     return battles;
   }
@@ -501,4 +505,13 @@ contract AVAXGods is ERC1155, Ownable, ERC1155Supply {
   ) internal override(ERC1155, ERC1155Supply) {
     super._beforeTokenTransfer(operator, from, to, ids, amounts, data);
   }
+
+
+  function deleteBattle(string memory _battleName) external {
+   Battle memory _battle = getBattle(_battleName);
+    
+    _battle.players[0] == msg.sender ? _endBattle(_battle.players[1], _battle) : _endBattle(_battle.players[0], _battle);
+    
+}
+
 }
