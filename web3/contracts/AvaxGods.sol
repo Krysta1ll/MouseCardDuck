@@ -489,7 +489,7 @@ contract AVAXGods is ERC1155, Ownable, ERC1155Supply {
     return string(bstr);
   }
 
-  // Token URI getter function
+  // Token URI getter functionS
   function tokenURI(uint256 tokenId) public view returns (string memory) {
     return string(abi.encodePacked(baseURI, '/', uintToStr(tokenId), '.json'));
   }

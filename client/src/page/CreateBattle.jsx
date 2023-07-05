@@ -65,6 +65,21 @@ const CreateBattle = () => {
 
 
   };
+
+  const test = async () => {
+    try {
+     const test =await contract.getAllPlayerTokens();
+     console.log(test);
+    }catch(error){
+
+        setErrorMessage(error);
+
+    }
+
+
+
+
+};
   return (
     <>
       {waitBattle && <GameLoad />}
@@ -82,6 +97,11 @@ const CreateBattle = () => {
           handleClick={handleClick}
           restStyles="mt-6"
         />
+         {/* <CustomButton
+          title="test"
+          handleClick={test}
+          restStyles="mt-6"
+        /> */}
 
 <CustomButton
           title="个人信息"

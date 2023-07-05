@@ -28,7 +28,7 @@ const Battleground = () => {
 
       <h1 className={`${styles.headText} text-center`}>
         选择你的
-        <span className="text-siteViolet"> 对战 </span>
+        <span className="text-green-500"> 对战 </span>
         背景
       </h1>
 
