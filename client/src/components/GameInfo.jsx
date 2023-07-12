@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import CustomButton from './CustomButton';
 import { useGlobalContext } from '../context';
 import { alertIcon, gameRules } from '../assets';
@@ -23,17 +22,24 @@ const GameInfo = () => {
     }
   };
   const backToMenu = async () => {
-      try {
+      
+    try {
+        
         navigate('../create-battle');
+      
       }catch(error){
 
+        
         setErrorMessage(error);
-      }
+      
+    }
 
   };
   return (
     <>
+      
       <div className={styles.gameInfoIconBox}>
+       
         <div
           className={`${styles.gameInfoIcon} ${styles.flexCenter}`}
           onClick={() => setToggleSidebar(true)}
@@ -43,18 +49,24 @@ const GameInfo = () => {
             alt="info"
             className={styles.gameInfoIconImg}
           />
+       
         </div>
+     
       </div>
 
       <div className={`${styles.gameInfoSidebar} ${toggleSidebar ? 'translate-x-0' : 'translate-x-full'} ${styles.glassEffect} ${styles.flexBetween} backdrop-blur-3xl`}>
+       
         <div className="flex flex-col">
+         
           <div className={styles.gameInfoSidebarCloseBox}>
+           
             <div
               className={`${styles.flexCenter} ${styles.gameInfoSidebarClose}`}
               onClick={() => setToggleSidebar(false)}
             >
               X
             </div>
+
           </div>
 
           <h3 className={styles.gameInfoHeading}>游戏规则:</h3>
@@ -66,6 +78,7 @@ const GameInfo = () => {
               </p>
             ))}
           </div>
+
         </div>
 
         <div className={`${styles.flexBetween} mt-10 gap-4 w-full`}>
@@ -73,9 +86,12 @@ const GameInfo = () => {
           <CustomButton title="投降" handleClick={() => handleBattleExit()} />
           <CustomButton title="返回主菜单" handleClick={() => backToMenu()} />
         </div>
+
       </div>
+
     </>
   );
 };
+
 
 export default GameInfo;

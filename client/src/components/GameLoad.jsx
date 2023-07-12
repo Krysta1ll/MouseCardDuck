@@ -36,11 +36,13 @@ const GameLoad = () => {
   return (
     <div className={`${styles.flexBetween} ${styles.gameLoadContainer}`}>
       <div className={styles.gameLoadBtnBox}>
+        
         <CustomButton
           title="选择背景"
           handleClick={() => navigate('/battleground')}
           restStyles="mt-6"
         />
+        
       </div>
 
       <div className={`flex-1 ${styles.flexCenter} flex-col`}>
@@ -74,6 +76,7 @@ const GameLoad = () => {
             title="加入其他已创建的战斗"
             handleClick={() => navigate('/join-battle')}
           />
+          
           <CustomButton
             title="停止匹配"
             handleClick={() => stopWaiting()}

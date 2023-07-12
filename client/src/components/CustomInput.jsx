@@ -19,4 +19,6 @@ const CustomInput = ({ label, placeHolder, value, handleValueChange }) => (
   </>
 );
 
+
+
 export default CustomInput;
