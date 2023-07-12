@@ -9,6 +9,7 @@ const Home = () => {
   const [playerName, setPlayerName] = useState('');
   const navigate = useNavigate();
 
+  
   const handleClick = async () => {
     try {
       const playerExists = await contract.isPlayer(walletAddress);
@@ -28,6 +29,7 @@ const Home = () => {
       setErrorMessage(error);
     }
   };
+
 
   useEffect(() => {
     const createPlayerToken = async () => {
@@ -61,7 +63,6 @@ const Home = () => {
           handleClick={handleClick}
           restStyles="mt-6"
         />
-
         
       </div>
     )
@@ -71,7 +72,7 @@ const Home = () => {
 export default PageHOC(
   Home,
   <>
-    欢迎来到MouseCardDuck <br /> 这是一个基于web3的nft卡牌游戏
+    欢迎来到MouseCardDuck <br /> 基于Web3的nft卡牌游戏
   </>,
   <>
     连接到你的钱包并且开始游戏 <br /> Connect to your wallet and start.

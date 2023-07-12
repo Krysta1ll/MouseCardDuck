@@ -12,11 +12,7 @@ const GameLoad = () => {
   
   // useEffect(()=>{
   //  navigate('/create-battle');
-
-
   // });
-
-
 
   const stopWaiting = async()=>{
     navigate('/create-battle');
@@ -35,11 +31,6 @@ const GameLoad = () => {
        
        console.log('err');
     }
-   
-    
-
-
-
 
   };
   return (

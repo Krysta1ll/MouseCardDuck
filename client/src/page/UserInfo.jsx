@@ -41,11 +41,9 @@ const UserInfo = () =>{
  
    };
 
-return (<>
-
+return (
 <>
-      
-
+  <>
       <div className="flex flex-col mb-5">
         <p className={`flex ${styles.headText} head-text`}>个人信息</p>
        <div>
