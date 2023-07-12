@@ -24,9 +24,9 @@ export default {
   },
   networks: {
     fuji: {
-      url: 'http://114.132.157.47:8545',
-      gasPrice: 200,
-      chainId: 15,
+      url: 'https://api.avax-test.network/ext/bc/C/rpc',
+      gasPrice: 225000000000,
+      chainId: 43113,
       accounts: [process.env.PRIVATE_KEY],
     },
     // subnet: {
