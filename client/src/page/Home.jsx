@@ -8,7 +8,7 @@ const Home = () => {
   const { contract, walletAddress, gameData, setShowAlert, setErrorMessage } = useGlobalContext();
   const [playerName, setPlayerName] = useState('');
   const navigate = useNavigate();
-
+// Compare this snippet from client\src\page\CreateBattle.jsx:
   
   const handleClick = async () => {
     try {
@@ -29,7 +29,7 @@ const Home = () => {
       setErrorMessage(error);
     }
   };
-
+// Compare this snippet from client\src\page\BattleGround.jsx:
 
   useEffect(() => {
     const createPlayerToken = async () => {
@@ -47,7 +47,7 @@ const Home = () => {
       navigate(`/battle/${gameData.activeBattle.name}`);
     }
   }, [gameData]);
-
+// Compare this snippet from client\src\components\CustomInput.jsx:
   return (
     walletAddress && (
       <div className="flex flex-col">
@@ -68,7 +68,7 @@ const Home = () => {
     )
   );
 };
-
+// Compare this snippet from client\src\page\Home.jsx:
 export default PageHOC(
   Home,
   <>
@@ -78,3 +78,4 @@ export default PageHOC(
     连接到你的钱包并且开始游戏 <br /> Connect to your wallet and start.
   </>,
 );
+// Compare this snippet from client\src\page\BattleGround.jsx:

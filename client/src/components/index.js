@@ -1,4 +1,5 @@
 import Card from './Card';
+
 import Alert from './Alert';
 import PageHOC from './PageHOC';
 import GameInfo from './GameInfo';

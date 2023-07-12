@@ -5,10 +5,10 @@ import CreateBattle from './CreateBattle';
 import JoinBattle from './JoinBattle';
 import UserInfo from './UserInfo';
 export {
-  Battle,
-  Home,
-  Battleground,
-  CreateBattle,
-  JoinBattle,
-  UserInfo,
+  Battle,//Battle
+  Home,//Home
+  Battleground,//Battleground
+  CreateBattle,//CreateBattle
+  JoinBattle,//JoinBattle
+  UserInfo,//UserInfo
 };

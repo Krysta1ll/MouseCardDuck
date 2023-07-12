@@ -1,3 +1,4 @@
+//主页
 import React, { createContext, useContext, useEffect, useRef, useState } from 'react';
 import { ethers } from 'ethers';
 import Web3Modal from 'web3modal';
@@ -150,20 +151,20 @@ export const GlobalContextProvider = ({ children }) => {
   return (
     <GlobalContext.Provider
       value={{
-        player1Ref,
-        player2Ref,
-        battleGround,
-        setBattleGround,
-        contract,
-        gameData,
-        walletAddress,
-        updateCurrentWalletAddress,
-        showAlert,
-        setShowAlert,
-        battleName,
-        setBattleName,
-        errorMessage,
-        setErrorMessage,
+        player1Ref,//player1Ref.current
+        player2Ref,//player2Ref.current
+        battleGround,//battleGround
+        setBattleGround,//setBattleGround
+        contract,//contract
+        gameData,//gameData
+        walletAddress,//walletAddress
+        updateCurrentWalletAddress,//updateCurrentWalletAddress
+        showAlert,//showAlert
+        setShowAlert,//setShowAlert
+        battleName,//battleName
+        setBattleName,//setBattleName
+        errorMessage,//errorMessage
+        setErrorMessage,//setErrorMessage
       }}
     >
       {children}
